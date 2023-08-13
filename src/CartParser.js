@@ -107,7 +107,7 @@ class CartParser {
 		}
 
 		for (let i = 0; i < bodyLines.length; i++) {
-			const cells = bodyLines[i].split(/,/).map(c => c.trim());
+			const cells = bodyLines[i].split(/,/).map(c => c.trim()).filter(Boolean);
 
 			if (cells.length < this.schema.columns.length) {
 				errors.push(
