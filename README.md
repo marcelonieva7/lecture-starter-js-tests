@@ -1,7 +1,7 @@
 ### Installation
 
 ```
-npm i
+npm install
 ```
 
 ### Run tests

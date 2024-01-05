@@ -4,7 +4,7 @@
 			"id": "3e6def17-5e87-4f27-b6b8-ae78948523a9",
 			"name": "Mollis consequat",
 			"price": 9,
-			"quantity": 2
+			"quantity": 3
 		},
 		{
 			"id": "90cd22aa-8bcf-4510-a18d-ec14656d1f6a",
@@ -31,5 +31,5 @@
 			"quantity": 1
 		}
 	],
-	"total": 348.32
+	"total": 357.32
 }
