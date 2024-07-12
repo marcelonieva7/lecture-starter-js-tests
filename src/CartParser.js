@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs';
-import * as uuidGenerator from 'uuid';
+import * as idGenerator from 'uuid';
 
 class CartParser {
 	constructor() {
@@ -186,7 +186,7 @@ class CartParser {
 			item[key] = valueTyped;
 		}
 
-		item.id = uuidGenerator.v4();
+		item.id = idGenerator.v4();
 
 		return item;
 	}
