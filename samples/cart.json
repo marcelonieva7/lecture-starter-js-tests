@@ -10,13 +10,13 @@
 			"id": "90cd22aa-8bcf-4510-a18d-ec14656d1f6a",
 			"name": "Tvoluptatem",
 			"price": 10.32,
-			"quantity": 1
+			"quantity": 2
 		},
 		{
 			"id": "33c14844-8cae-4acd-91ed-6209a6c0bc31",
 			"name": "Scelerisque lacinia",
 			"price": 18.9,
-			"quantity": 1
+			"quantity": 2
 		},
 		{
 			"id": "f089a251-a563-46ef-b27b-5c9f6dd0afd3",
@@ -28,8 +28,8 @@
 			"id": "0d1cbe5e-3de6-4f6a-9c53-bab32c168fbf",
 			"name": "Condimentum aliquet",
 			"price": 13.9,
-			"quantity": 1
+			"quantity": 2
 		}
 	],
-	"total": 357.32
+	"total": 400.44
 }
