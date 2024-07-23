@@ -110,3 +110,41 @@ describe('CartParser - unit tests', () => {
 		});
 	});
 });
+
+describe('CartParser Integration Tests', () => {
+  let parser;
+	jest.unmock('fs');
+	jest.unmock('uuid');
+	jest.resetModules();
+
+	const CartParser = require('./CartParser').default;
+	const idGenerator = require('uuid');
+	const readFileSync = require('fs').readFileSync;
+
+
+  beforeEach(() => {
+    parser = new CartParser();
+  });
+
+  test('should parse entire CSV file and return correct JSON', () => {
+		const csvFilePath = path.resolve(__dirname, '../samples/cart.csv');
+    const expectedJsonPath = path.resolve(__dirname, '../samples/cart.json');
+		
+    const expectedJson = JSON.parse(readFileSync(expectedJsonPath, 'utf-8'));
+    const result = parser.parse(csvFilePath);
+    const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+    expect(result.total).toEqual(expectedJson.total);
+
+    result.items.forEach((item, index) => {
+      expect(item).toMatchObject({
+        name: expectedJson.items[index].name,
+        price: expectedJson.items[index].price,
+        quantity: expectedJson.items[index].quantity
+      });
+
+      expect(typeof item.id).toBe('string');
+      expect(item.id).toMatch(uuidRegex);
+    });
+  });
+});
